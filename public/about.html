@@ -230,6 +230,46 @@
       width: auto;
     }
 
+    .team-card {
+      width: 30%;
+      margin: 25px 1%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: centar;
+    }
+
+    .team-card>* {
+      width: 100%;
+      display: block;
+    }
+
+    .team-photo {
+      width: 250px;
+      height: 250px;
+      margin: 10px 50px;
+      border-radius: 58px;
+      overflow: hidden;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: auto;
+    }
+
+    .team-name {
+      font-size: 21px;
+      color: #333333;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .team-position {
+      font-size: 14px;
+      color: #999999;
+    }
+
     /* RESPONSIVE */
 
     @media screen and (max-width: 600px) {
@@ -375,7 +415,6 @@
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       -webkit-user-select: none;
-      -webkit-user-select: none;
       outline: none;
       border: 0;
       padding: 0 6px;
@@ -419,7 +458,7 @@
   <header id="header">
     <nav class="topnav" id="myTopnav">
       <div class="left">
-        <a href="#home" id="logo-site" class="active">
+        <a href="./index.html" id="logo-site" class="active">
           <img src="./hyperspace-black.png" alt="Image Content - Logo -  Hyperspace">
         </a>
       </div>
@@ -435,32 +474,76 @@
 
   <div class="container">
     <section id="opening">
-      <h1>We are hyperspace creative team</h1>
-      <p>hyperspace is the best design studio around the world.
+      <h1>About Hyperspace</h1>
+      <p>Hyperspace is the best design studio around the world.
       </p>
     </section>
     <section id="group">
       <div class="section-title">
         <h2>TEAM</h2>
         <div class="flex">
-          <a href="#">
-            <img src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg" alt="Image Content - Logo - hyperspace">
-          </a>
-          <a href="#">
-            <img src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg" alt="Image Content - Logo - hyperspace">
-          </a>
-          <a href="#">
-            <img src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg" alt="Image Content - Logo - hyperspace">
-          </a>
-          <a href="#">
-            <img src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg" alt="Image Content - Logo - hyperspace">
-          </a>
-          <a href="#">
-            <img src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg" alt="Image Content - Logo - hyperspace">
-          </a>
-          <a href="#">
-            <img src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg" alt="Image Content - Logo - hyperspace">
-          </a>
+
+          <div class="team-card">
+            <div class="team-photo">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg"
+                alt="Image Content - Logo - hyperspace" />
+            </div>
+            <span class="team-name">Adin</span>
+            <span class="team-position">UI/UX Designer</span>
+          </div>
+
+          <div class="team-card">
+
+            <div class="team-photo">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg"
+                alt="Image Content - Logo - hyperspace" />
+            </div>
+            <span class="team-name">Suaidi</span>
+            <span class="team-position">Software Developer</span>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg"
+                alt="Image Content - Logo - hyperspace" />
+            </div>
+            <span class="team-name">Kong</span>
+            <span class="team-position">Illustrator</span>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg"
+                alt="Image Content - Logo - hyperspace" />
+            </div>
+            <span class="team-name">Ayu</span>
+            <span class="team-position">Graphic Designer</span>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg"
+                alt="Image Content - Logo - hyperspace" />
+            </div>
+            <span class="team-name">Rofi</span>
+            <span class="team-position">Graphic Designer</span>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo">
+              <img
+                src="https://cdnb.artstation.com/p/assets/images/images/001/863/575/medium/irakli-nadar-artstation-da.jpg"
+                alt="Image Content - Logo - hyperspace" />
+            </div>
+            <span class="team-name">Ali</span>
+            <span class="team-position">Font Designer</span>
+          </div>
+
         </div>
       </div>
     </section>
