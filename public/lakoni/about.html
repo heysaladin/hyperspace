@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lokajaya</title>
+  <title>About - lakoni</title>
   <meta name="robots" content="index, follow">
-  <meta name="og:title" property="og:title" content="Lokajaya">
-  <meta name="description" content="Lokajaya">
+  <meta name="og:title" property="og:title" content="lakoni Design Studio">
+  <meta name="description" content="lakoni Design Studio">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
@@ -54,7 +54,6 @@
         layout style
         ============  */
 
-
     /* header */
     #header nav {
       display: flex;
@@ -77,7 +76,6 @@
       margin: 0 auto;
       max-width: 1200px;
     }
-
 
     /*  ============
         custom style
@@ -118,7 +116,7 @@
     }
 
     nav .right {
-      margin-right: 24px;
+      margin-right: 15px;
     }
 
     #logo-site>img {
@@ -179,8 +177,12 @@
       font-size: 72pt;
     }
 
+    section#group {
+      padding: 120px 0 50px;
+    }
+
     section#action {
-      padding: 120px 0 160px;
+      padding: 70px 0 160px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -207,13 +209,72 @@
 
     .grid>* {
       width: 48%;
-      margin: 8px 1%;
+      margin: 10px 1%;
     }
 
     .grid a img {
       width: 100%;
-      border-radius: 6px;
-      border: solid 1px #f0f2f6;
+    }
+
+    /* flex */
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .flex>* {
+      width: 30%;
+      margin: 25px 1%;
+    }
+
+    .flex a img {
+      max-height: 100px;
+      max-width: 100%;
+      width: auto;
+    }
+
+    .team-card {
+      width: 30%;
+      margin: 25px 1%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: centar;
+    }
+
+    .team-card>* {
+      width: 100%;
+      display: block;
+    }
+
+    .team-photo {
+      width: 250px;
+      height: 250px;
+      margin: 10px 50px;
+      border-radius: 58px;
+      overflow: hidden;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: auto;
+    }
+
+    .team-name {
+      font-size: 21px;
+      color: #333333;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .team-position {
+      font-size: 14px;
+      color: #999999;
     }
 
     /* RESPONSIVE */
@@ -279,6 +340,16 @@
         margin: 6px 1%;
       }
 
+      /* flex */
+
+      .flex {
+        flex-direction: column;
+      }
+
+      .flex>* {
+        width: 98%;
+      }
+
       /* social-media */
       .social-media {
         margin: 32px auto;
@@ -307,19 +378,99 @@
         padding: 26px 0 15px 30px;
       }
     }
+
+    .grid-wrapper {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      font-family: sans-serif;
+    }
+
+    .card {
+      margin: 5px 0.425%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: white;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      -webkit-box-shadow: 0 0 0 1px #e0e0e0 inset;
+      box-shadow: 0 0 0 1px #e0e0e0 inset;
+      font-size: 14px;
+      width: 300px;
+      min-height: 150px;
+    }
+
+    .card a {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      min-height: 36px;
+      min-width: 88px;
+      line-height: 36px;
+      vertical-align: middle;
+      -webkit-align-items: center;
+      align-items: center;
+      text-align: center;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-user-select: none;
+      outline: none;
+      border: 0;
+      padding: 0 6px;
+      margin: 15px 8px 6px;
+      background: transparent;
+      color: currentColor;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      font-style: inherit;
+      font-variant: inherit;
+      font-family: inherit;
+      text-decoration: none;
+      overflow: hidden;
+      -webkit-transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+      padding-left: 16px;
+      padding-right: 16px;
+      border: 0;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      text-transform: none;
+      letter-spacing: 0.25px;
+      min-width: 60px;
+
+      background-color: #83afe3;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #fff;
+    }
   </style>
 
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.995.0" data-gr-ext-installed="">
+
   <header id="header">
     <nav class="topnav" id="myTopnav">
       <div class="left">
-        <a href="#home" id="logo-site" class="active">
-          <img src="../lokajaya-logo-black.png" alt="Image Content - Logo -  Curiopavo">
+        <a href="./index.html" id="logo-site" class="active">
+          <img src="../lakoni.png" alt="Image Content - Logo -  lakoni">
         </a>
       </div>
       <div class="right">
+        <a href="./index.html">HOME</a>
         <a href="./contact.html">CONTACT</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
@@ -330,48 +481,48 @@
 
   <div class="container">
     <section id="opening">
-      <h1>We are "Lokajaya" creative team</h1>
-      <p>Omnivorous Creative Design. Graphic design, font, icon, illustration & template design (phisical or digital).
+      <h1>About lakoni</h1>
+      <p>lakoni is the best design studio around the world.
       </p>
     </section>
-    <section id="portfolio">
-      <div class="grid">
-        <a href="#">
-          <img
-            src="https://scontent-sin6-2.cdninstagram.com/v/t51.2885-15/e35/120142557_333245821219541_7674687571622980789_n.jpg?_nc_ht=scontent-sin6-2.cdninstagram.com&_nc_cat=105&_nc_ohc=slgd1vT2liEAX-knI7S&tp=1&oh=a7b94be96ccb4a8c8e7116a439cd7b98&oe=60569D36"
-            alt="Mitayani - Lizard Mascot">
-        </a>
-        <a href="#">
-          <img
-            src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/120164850_666246417631399_4393761608155879297_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=107&_nc_ohc=Q0DoWI83tAQAX-zftnM&tp=1&oh=e9037e8890ccdd37d0353c2ada125c6f&oe=60568C1A"
-            alt="Mitayani - Balinese Tech Young">
-        </a>
-        <a href="#">
-          <img
-            src="https://scontent-sin6-2.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/120176363_951711558684305_7185349272343055840_n.jpg?_nc_ht=scontent-sin6-2.cdninstagram.com&_nc_cat=105&_nc_ohc=WEeEdygD5H4AX-1jAEE&tp=1&oh=7b5048cf2f9c9546b977e6bcc87dde26&oe=6055EDF6"
-            alt="Mitayani - Old Lady">
-        </a>
-        <a href="#">
-          <img
-            src="https://scontent-sin6-3.cdninstagram.com/v/t51.2885-15/e35/120202666_763008807828045_4013686148992235989_n.jpg?_nc_ht=scontent-sin6-3.cdninstagram.com&_nc_cat=109&_nc_ohc=9FK3G2kpyRgAX8Xr_xD&tp=1&oh=049e046889411a6362299d74adcf50e5&oe=60556B5A"
-            alt="Mitayani - Esenja">
-        </a>
+    <section id="group">
+      <div class="section-title">
+        <h2>TEAM</h2>
+        <div class="flex">
+
+          <div class="team-card">
+            <div class="team-photo">
+              <img src="../pp1.jpg" alt="Image Content - Logo - lakoni" />
+            </div>
+            <span class="team-name">Adin</span>
+            <span class="team-position">Illustrator</span>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo">
+              <img src="../pp3.jpg" alt="Image Content - Logo - lakoni" />
+            </div>
+            <span class="team-name">Kong</span>
+            <span class="team-position">Illustrator</span>
+          </div>
+
+        </div>
       </div>
     </section>
     <section id="action">
       <h3>Wanna work together?</h3>
-      <button onclick="location.href='mailto:heysaladin@gmail.com';"
+      <button onclick="location.href='./contact.html';"
         style="margin:24px auto 0;border:none;color:#fff;background-image:linear-gradient(135deg,#8254e5,#83afe3 150%);height:50px;padding:16px 32px;font-family:Montserrat,sans-serif;font-weight:700;font-size:.688rem;line-height:18px;letter-spacing:1.54px;text-transform:uppercase;border-radius:25px;box-shadow:0 11px 36px 0 rgb(70 89 138 / 25%);">Contact
         us!</button>
     </section>
   </div>
 
   <footer id="footer">
-    <p>© 2018 Lokajaya. All rights reserved.</p>
+    <p>© 2021 lakoni. All rights reserved.</p>
     <div class="social-media">
       <a href="https://www.instagram.com/lakoni.design/"><span class="fa fa-instagram"></span></a>
       <a href="https://dribbble.com/lakoni"><span class="fa fa-dribbble"></span></a>
-      <a href="https://curiopavo.web.app/"><span class="fa fa-snowflake-o"></span></a>
+      <a href="https://lakoni.web.app/"><span class="fa fa-snowflake-o"></span></a>
     </div>
   </footer>
 
@@ -385,6 +536,7 @@
       }
     }
   </script>
+
 </body>
 
 </html>
