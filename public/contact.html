@@ -483,27 +483,29 @@
 
       <h4>Send a message to us</h4>
 
-      <form id="contactform" method="POST">
+      <form id="contactform" name="contactform" onsubmit="return validateForm()" method="POST">
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon">Name</span>
-            <input name="form-name-input" type="text" name="name" class="form-control" required>
+            <input type="text" name="name" class="form-control" required>
           </div>
           <div class="input-group">
             <span class="input-group-addon">Email</span>
-            <input name="_replyto" type="email" name="_replyto" class="form-control" required>
+            <input type="email" name="_replyto" class="form-control" required>
           </div>
           <div class="input-group">
             <span class="input-group-addon">Subject</span>
-            <input name="form-subject-input" type="text" name="subject" class="form-control" required>
+            <input type="text" name="subject" class="form-control" required>
           </div>
           <div class="input-group">
             <span class="input-group-addon">Description</span>
-            <textarea name="form-description-input" name="description" class="form-control" rows="4" cols="60"
-              required></textarea>
+            <textarea name="description" class="form-control" rows="4" cols="60" required></textarea>
           </div>
-          <input type="text" name="_gotcha" style="display:none" />
-          <button id="sendMessage">Send</button>
+          <input type="hidden" name="project_type" value="General Services" />
+          <input type="hidden" name="team" value="Hyperspace" />
+          <input type="hidden" name="come_from" value="https://hyperspacecreative.web.app/" />
+          <!-- <input type="text" name="_gotcha" style="display:none" /> -->
+          <button name="submit" type="submit" id="sendMessage">Send</button>
         </div>
       </form>
 
@@ -534,34 +536,159 @@
 
   <script>
     var message = "";
-    $("#sendMessage").on("click", function () {
+    var url = "";
+    var xhr = "";
+
+    var name = "";
+    var email_address = "";
+    var project_type = "";
+
+    function validateEmail(email) {
+      var re =
+        /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+      return re.test(email);
+    }
+
+    $("#sendMessage").on("click", function (e) {
+      e.preventDefault();
+
+      name = document.forms["contactform"]["name"].value;
+      email_address = document.forms["contactform"]["_replyto"].value;
+      phone_number = '0';
+      subject = document.forms["contactform"]["subject"].value;
+      description = document.forms["contactform"]["description"].value;
+      project_type = document.forms["contactform"]["project_type"].value;
+      team = document.forms["contactform"]["team"].value;
+      come_from = document.forms["contactform"]["come_from"].value;
+
+      console.log('name: ' + name);
+      console.log('email_address: ' + email_address);
+      console.log('project_type: ' + project_type);
+
       message = $("#contactform").serialize();
-      $.ajax({
-        // url: "//formspree.io/didien.geonk@gmail.com",
-        url: "https://formspree.io/f/mrgovjjw",
-        method: "POST",
-        data: {
-          message: message
-        },
-        dataType: "json"
-      });
-      // alert('Thanks for the email, we\'ll be in touch promptly.');
 
-      setTimeout(function () {
-        swal({
-          title: "Yeeey!",
-          text: "Your message has been successfully sent!",
-          type: "success"
-          // }, function() {
-          //     window.location = './index.html';
-        }).then(function () {
-          window.location = './index.html';
+      url =
+        'https://script.google.com/macros/s/AKfycbzIP5lx22SmZKerNk_siXwZmT8BzpEKNgQzd618IPZCJY1L2LZ6dnj1bA/exec?name=' +
+        document.forms["contactform"]["name"].value + '&' +
+        'email_address=' + document.forms["contactform"]["_replyto"].value + '&' +
+        'phone_number=' + phone_number + '&' +
+        'project_type=' + document.forms["contactform"]["project_type"].value + '&' +
+        'team=' + document.forms["contactform"]["team"].value + '&' +
+        'come_from=' + document.forms["contactform"]["come_from"].value;
+
+      if (name == "") {
+        swal("Oh no...", "Please tell us your name!", "error", {
+          button: "OK!",
         });
-      }, 600);
+        return false;
+      } else if (name.length < 6) {
+        swal("Oh please...", "Your name must more than 5 characters!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else if (email_address == "") {
+        swal("Please...", "Please tell us your email!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else if (validateEmail(email_address) == false) {
+        swal("Please fix it!", "You have entered an invalid email address.", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else if (subject == "") {
+        swal("Oh no...", "Please tell us your subject!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else if (subject.length < 6) {
+        swal("Oh please...", "Your subject must more than 5 characters!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else if (description == "") {
+        swal("Oh no...", "Please tell us your description!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else if (description.length < 6) {
+        swal("Oh please...", "Your description must more than 5 characters!", "error", {
+          button: "OK!",
+        });
+        return false;
+      }
+      /* else if (phone_number == "") {
+        swal("Please...", "Please tell us your phone number!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else if (typeof parseInt(phone_number) != 'number') {
+        swal("Oops...", "Phone number must number!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else if (phone_number.length < 10) {
+        swal("Oh please...", "Your phone number length must more than 9!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } */
+      else if (project_type == "default") {
+        swal("Cool, but...", "Please select the project type!", "error", {
+          button: "OK!",
+        });
+        return false;
+      } else {
 
+        console.log(url);
+
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            $.ajax({
+              url: "https://formspree.io/f/mrgovjjw",
+              method: "POST",
+              data: {
+                message: message
+              },
+              dataType: "json"
+            });
+
+            setTimeout(function () {
+              swal("Good job!", "Your message has been sent!", "success", {
+                  button: "OK!",
+                })
+                .then(() => {
+                  window.location = "index.html";
+                });
+            }, 600);
+
+            /*
+            setTimeout(function () {
+              swal({
+                title: "Yeeey!",
+                text: "Your message has been successfully sent!",
+                type: "success"
+                // }, function() {
+                //     window.location = './index.html';
+              }).then(function () {
+                window.location = './index.html';
+              });
+            }, 600);
+            */
+
+          } else {
+            swal("Sorry...", "Error server, try again later!", "error", {
+              button: "OK!",
+            });
+          }
+        };
+        xhr.send();
+
+      }
       return false;
-      // window.location.href = "./index.html";
-      // window.location = './index.html';
+
     });
   </script>
 
