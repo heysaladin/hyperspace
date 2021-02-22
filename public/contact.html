@@ -481,7 +481,7 @@
   <div class="container">
     <section id="opening">
 
-      <h4>Send a message to us</h4>
+      <h4>Send us a message</h4>
 
       <form id="contactform" name="contactform" onsubmit="return validateForm()" method="POST">
         <div class="form-group">
@@ -511,7 +511,7 @@
 
     </section>
     <section id="action">
-      <h4>or send an Email</h4>
+      <h4>or send an Email directly</h4>
       <button onclick="location.href='mailto:heysaladin@gmail.com';"
         style="margin:24px auto 0;background-color:white;border:solid 1px #8254e5;color:#8254e5;height:50px;padding:16px 32px;font-family:Montserrat,sans-serif;font-weight:700;font-size:.688rem;line-height:18px;letter-spacing:1.54px;text-transform:uppercase;border-radius:25px;">Email
         us!</button>
@@ -561,10 +561,6 @@
       team = document.forms["contactform"]["team"].value;
       come_from = document.forms["contactform"]["come_from"].value;
 
-      console.log('name: ' + name);
-      console.log('email_address: ' + email_address);
-      console.log('project_type: ' + project_type);
-
       message = $("#contactform").serialize();
 
       url =
@@ -574,7 +570,9 @@
         'phone_number=' + phone_number + '&' +
         'project_type=' + document.forms["contactform"]["project_type"].value + '&' +
         'team=' + document.forms["contactform"]["team"].value + '&' +
-        'come_from=' + document.forms["contactform"]["come_from"].value;
+        'come_from=' + document.forms["contactform"]["come_from"].value + '&' +
+        'subject=' + document.forms["contactform"]["subject"].value + '&' +
+        'description=' + document.forms["contactform"]["description"].value;
 
       if (name == "") {
         swal("Oh no...", "Please tell us your name!", "error", {
@@ -640,7 +638,7 @@
         return false;
       } else {
 
-        console.log(url);
+        // console.log(url);
 
         xhr = new XMLHttpRequest();
         xhr.open('GET', url);
@@ -656,13 +654,13 @@
             });
 
             setTimeout(function () {
-              swal("Good job!", "Your message has been sent!", "success", {
+              swal("Succeed!", "Your message has been sent!", "success", {
                   button: "OK!",
                 })
                 .then(() => {
                   window.location = "index.html";
                 });
-            }, 600);
+            }, 300);
 
             /*
             setTimeout(function () {
