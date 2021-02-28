@@ -1,0 +1,199 @@
+p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+
+  /* or 171% */
+
+  color: #686978;
+}
+#hero h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #ff7d39;
+}
+#hero h1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+
+  color: #172955;
+}
+#hero h2 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+
+  /* or 171% */
+
+  color: #686978;
+}
+#pricing .box {
+  padding: 38px 30px;
+  background: #ffffff;
+  border: 1px solid #dde6f4;
+  box-sizing: border-box;
+  border-radius: 24px;
+}
+#pricing h2 {
+  margin: 40px 0 20px;
+  text-align: left;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+
+  /* identical to box height */
+
+  color: #172955;
+}
+#pricing p {
+  text-align: left;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+
+  /* or 171% */
+
+  color: #686978;
+}
+.icon-group-main {
+  width: 100px;
+  height: 100px;
+  background: url("../img/icon-group-bg.png") no-repeat center center;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-group-main-active {
+  background: url("../img/icon-group-active-bg.png") no-repeat center center;
+  background-size: 100%;
+}
+.icon-main {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+#icon-main-1 {
+  background: url("../img/icon-main-1.png") no-repeat center center;
+  background-size: 100%;
+}
+#icon-main-2 {
+  background: url("../img/icon-main-2.png") no-repeat center center;
+  background-size: 100%;
+}
+#icon-main-3 {
+  background: url("../img/icon-main-3.png") no-repeat center center;
+  background-size: 72%;
+}
+#icon-main-4 {
+  background: url("../img/icon-main-4.png") no-repeat center center;
+  background-size: 90%;
+}
+.about .content {
+  background-color: transparent;
+}
+#about h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 26px;
+
+  /* identical to box height */
+
+  color: #a0a2db;
+}
+#about h2 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+
+  /* identical to box height */
+
+  color: #172955;
+}
+.values .box img {
+  padding: 0px 0px;
+  transition: 0s;
+  transform: scale(1);
+}
+#values .box {
+  overflow: hidden;
+  padding: 0px 0px;
+  background: #ffffff;
+  border: 1px solid #dde6f4;
+  box-sizing: border-box;
+  border-radius: 24px;
+}
+#values .box h3 {
+  padding: 40px 30px 0px 30px;
+  text-align: left;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+
+  /* identical to box height */
+
+  color: #172955;
+}
+#values .box p {
+  padding: 0px 30px 20px 30px;
+  text-align: left;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+
+  /* or 171% */
+
+  color: #686978;
+}
+.icon-group-service {
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 15px 40px rgba(53, 63, 252, 0.15);
+  border-radius: 24px;
+}
+.icon-service {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+#icon-service-1 {
+  background: url("../img/icon-service-1.png") no-repeat center center;
+  background-size: 100%;
+}
+#icon-service-2 {
+  background: url("../img/icon-service-2.png") no-repeat center center;
+  background-size: 100%;
+}
+#icon-service-3 {
+  background: url("../img/icon-service-3.png") no-repeat center center;
+  background-size: 100%;
+}
