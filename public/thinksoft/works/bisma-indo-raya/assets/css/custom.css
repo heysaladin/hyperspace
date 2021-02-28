@@ -197,3 +197,9 @@ p {
   background: url("../img/icon-service-3.png") no-repeat center center;
   background-size: 100%;
 }
+.footer .copyright {
+  text-align: left;
+}
+#footer .row {
+  margin: 0 30px;
+}
