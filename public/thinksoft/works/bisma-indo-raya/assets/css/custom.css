@@ -197,9 +197,138 @@ p {
   background: url("../img/icon-service-3.png") no-repeat center center;
   background-size: 100%;
 }
+#recent-blog-posts .row > div {
+  margin-bottom: 23px;
+}
 .footer .copyright {
   text-align: left;
 }
 #footer .row {
   margin: 0 30px;
+}
+.social-links a {
+  margin: 0 6px;
+}
+.background {
+  background-color: #f7f9fc;
+}
+.header-page {
+  margin: 80px auto 20px;
+}
+.header-page > p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  color: #172955;
+}
+.card-custom {
+  margin-bottom: 24px;
+}
+.card-product {
+}
+.card-custom .box {
+  overflow: hidden;
+  padding: 0px 0px;
+  background: #ffffff;
+  border: 1px solid #dde6f4;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+.card-custom .box > img {
+  width: 100%;
+  height: auto;
+}
+.card-custom .box > h3 {
+  padding: 14px 28px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  color: #172955;
+}
+#team .card-custom .box > h3 {
+  padding: 14px 28px 0;
+  text-align: center;
+}
+#team .card-custom .box > span {
+  padding: 0 28px 24px;
+  text-align: center;
+  display: block;
+}
+.document-item {
+  margin-bottom: 50px;
+}
+.document-item p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  color: #172955;
+  margin: 18px 10px 10px 0;
+}
+.icon-group-document {
+  width: 100px;
+  height: 100px;
+  background: #eef5ff;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-document {
+  display: block;
+  width: 50px;
+  height: 58px;
+  background: url("../img/icon-document.png") no-repeat center center;
+  background-size: 100%;
+}
+#news-details .breadcrumbs {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  
+  /* identical to box height */
+  
+  color: #FF7D39;
+
+  background: none;
+  margin: 0;
+  
+  
+}
+#news-details .title {
+  font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+
+/* identical to box height, or 133% */
+
+color: #172955;
+}
+#news-details .date {
+  font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+
+/* identical to box height */
+
+color: #353FFC;
+
+
+}
+#news-details img {
+  margin: 25px 0;
+
+
 }
