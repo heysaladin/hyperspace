@@ -225,6 +225,18 @@ p {
   text-align: center;
   color: #172955;
 }
+.header-not-first {
+  margin: 0 auto 20px;
+}
+.header-not-first > p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  color: #172955;
+}
 .card-custom {
   margin-bottom: 24px;
 }
@@ -343,6 +355,56 @@ p {
   border-radius: 0px 10px 10px 0px;
   color: white;
 }
+
+
+
+#card-map {
+  margin: 35px 0px;
+}
+#blue-area-map {
+  padding: 30px;
+  background: #172955;
+  border-radius: 0px 10px 10px 0px;
+  color: white;
+}
+#white-area-map {
+  min-height: 200px;
+  background: url(../img/map.png) no-repeat center center;
+  background-size: 100%;
+}
+#blue-area-map a {
+  padding: 0px 16px;
+  color: white;
+  font-weight: bold;
+}
+#whatsapp-area h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  color: #172955;
+  margin: 20px 0 20px;
+}
+.whatsapp-button {
+  color: white;
+  background: #128C7E;
+  border-radius: 10px;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.whatsapp-button:hover {
+  color: white;
+  font-weight: bold;
+}
+.whatsapp-button i {
+  margin: 0 10px 6px 0;
+}
+
+
+
 #white-area form label {
   margin: 20px 0 10px;
   font-family: Montserrat;
@@ -587,3 +649,14 @@ p {
   padding: 10px 25px;
 }
 /* end of ABOUT */
+
+#images .container .row > div {
+  margin-bottom: 22px;
+}
+
+
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+}
