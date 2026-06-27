@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { ChevronLeft, Bell } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -34,11 +36,13 @@ export function TopBar({ title, backHref, right }: TopBarProps) {
 
   return (
     <header className="sticky top-0 z-40 bg-[#f5f5f0] border-b border-zinc-200 flex items-center px-4 py-3 gap-2">
-      <Avatar className="w-9 h-9 shrink-0">
-        <AvatarFallback className="bg-[#1e1e30] text-white text-sm font-semibold">
-          AD
-        </AvatarFallback>
-      </Avatar>
+      <Link href="/profil" className="shrink-0">
+        <Avatar className="w-9 h-9 active:opacity-80 transition-opacity">
+          <AvatarFallback className="bg-[#1e1e30] text-white text-sm font-semibold">
+            AD
+          </AvatarFallback>
+        </Avatar>
+      </Link>
       <h1 className="text-[15px] font-semibold flex-1 text-center">{title}</h1>
       {right && <div className="flex items-center gap-2 shrink-0">{right}</div>}
       <Link href="/notifikasi" className="shrink-0">

@@ -18,8 +18,8 @@ const menuItems = [
 export default function ProfilPage() {
   return (
     <div className="min-h-[100dvh] flex flex-col">
-      <TopBar title="Profil" />
-      <main className="flex-1 overflow-y-auto px-4 pt-4 pb-28 space-y-5">
+      <TopBar title="Profil" backHref="/" />
+      <main className="flex-1 overflow-y-auto px-4 pt-4 pb-10 space-y-5">
 
         {/* Profile card */}
         <Card className="border-0 shadow-sm bg-[#1e1e30] text-white">
@@ -87,7 +87,6 @@ export default function ProfilPage() {
           Keluar
         </button>
       </main>
-      <BottomNav />
     </div>
   )
 }

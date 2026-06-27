@@ -109,58 +109,74 @@ export default function MyKpiPage() {
         {/* KPI Cards */}
         <div className="px-4 space-y-3">
           {kpiList.map((kpi, idx) => (
-            <Link key={kpi.id} href={`/kpi/${kpi.id}`}>
-              <div className="bg-white rounded-2xl shadow-sm p-4 active:scale-[0.98] transition-transform">
-                <div className="flex items-start gap-3">
-                  {/* Number badge */}
-                  <div className="w-6 h-6 rounded-lg bg-[#4ecb71] flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="text-white text-[11px] font-bold">{idx + 1}</span>
-                  </div>
+            <div key={kpi.id} className="bg-white rounded-2xl shadow-sm overflow-hidden">
+              <Link href={`/kpi/${kpi.id}`}>
+                <div className="p-4 active:bg-zinc-50 transition-colors">
+                  <div className="flex items-start gap-3">
+                    {/* Number badge */}
+                    <div className="w-6 h-6 rounded-lg bg-[#4ecb71] flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="text-white text-[11px] font-bold">{idx + 1}</span>
+                    </div>
 
-                  {/* Emoji icon */}
-                  <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center shrink-0 text-xl">
-                    {kpi.emoji}
-                  </div>
+                    {/* Emoji icon */}
+                    <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center shrink-0 text-xl">
+                      {kpi.emoji}
+                    </div>
 
-                  {/* Middle: name + target/realisasi + progress */}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-zinc-800 leading-tight truncate">{kpi.name}</p>
-                    <p className="text-[10px] text-zinc-400 mt-0.5">
-                      Target: {kpi.target} &nbsp;|&nbsp; Realisasi: {kpi.realisasi}
-                    </p>
+                    {/* Middle: name + target/realisasi + progress */}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-bold text-zinc-800 leading-tight truncate">{kpi.name}</p>
+                      <p className="text-[10px] text-zinc-400 mt-0.5">
+                        Target: {kpi.target} &nbsp;|&nbsp; Realisasi: {kpi.realisasi}
+                      </p>
 
-                    {/* Progress bar */}
-                    <div className="mt-2.5 flex items-center gap-2">
-                      <div className="flex-1 h-2 rounded-full bg-green-50 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-[#4ecb71] transition-all"
-                          style={{ width: `${kpi.progress}%` }}
-                        />
+                      {/* Progress bar */}
+                      <div className="mt-2.5 flex items-center gap-2">
+                        <div className="flex-1 h-2 rounded-full bg-green-50 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-[#4ecb71] transition-all"
+                            style={{ width: `${kpi.progress}%` }}
+                          />
+                        </div>
+                        <span className="text-[10px] font-semibold bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-md shrink-0">
+                          {kpi.progress}%
+                        </span>
                       </div>
-                      <span className="text-[10px] font-semibold bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-md shrink-0">
-                        {kpi.progress}%
+                    </div>
+
+                    {/* Right: circle progress + bobot badge */}
+                    <div className="flex flex-col items-center gap-1 shrink-0">
+                      <div className="relative">
+                        <CircleProgress value={kpi.progress} size={52} />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-[11px] font-bold text-zinc-700">{kpi.score}%</span>
+                        </div>
+                      </div>
+                      <span className="text-[10px] font-semibold bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">
+                        Bobot {kpi.bobot}%
                       </span>
                     </div>
                   </div>
-
-                  {/* Right: circle progress + bobot badge */}
-                  <div className="flex flex-col items-center gap-1 shrink-0">
-                    <div className="relative">
-                      <CircleProgress value={kpi.progress} size={52} />
-                      <div
-                        className="absolute inset-0 flex items-center justify-center"
-                        style={{ transform: "rotate(0deg)" }}
-                      >
-                        <span className="text-[11px] font-bold text-zinc-700">{kpi.score}%</span>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-semibold bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">
-                      Bobot {kpi.bobot}%
-                    </span>
-                  </div>
                 </div>
+              </Link>
+
+              {/* Quick action bar */}
+              <div className="border-t border-zinc-100 flex">
+                <Link
+                  href={`/kpi/${kpi.id}`}
+                  className="flex-1 py-2.5 text-center text-[12px] font-medium text-zinc-500 active:bg-zinc-50"
+                >
+                  Detail
+                </Link>
+                <div className="w-px bg-zinc-100" />
+                <Link
+                  href={`/kpi/${kpi.id}/update`}
+                  className="flex-1 py-2.5 text-center text-[12px] font-semibold text-[#1a5c35] active:bg-green-50"
+                >
+                  Update Realisasi
+                </Link>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 

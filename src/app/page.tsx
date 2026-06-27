@@ -24,8 +24,9 @@ const kpiAlerts = [
     label: "KPI belum di-update",
     count: 3,
     unit: "KPI",
-    href: "/kpi",
+    href: "/kpi/1/update",
     icon: Clock,
+    cta: "Update sekarang →",
   },
   {
     label: "KPI belum diverifikasi",
@@ -33,6 +34,7 @@ const kpiAlerts = [
     unit: "KPI",
     href: "/kpi",
     icon: XCircle,
+    cta: null,
   },
   {
     label: "Task menunggu dikerjakan",
@@ -40,6 +42,7 @@ const kpiAlerts = [
     unit: "Task",
     href: "/task",
     icon: ClipboardList,
+    cta: null,
   },
 ]
 
@@ -216,9 +219,12 @@ export default function HomePage() {
                   <Card className="bg-white border border-zinc-200 active:scale-[0.98] transition-transform">
                     <CardContent className="p-4 flex items-center gap-3">
                       <Icon className="w-5 h-5 text-zinc-500 shrink-0" />
-                      <p className="text-[13px] font-medium text-zinc-700 flex-1 min-w-0">
-                        {item.label}
-                      </p>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[13px] font-medium text-zinc-700">{item.label}</p>
+                        {item.cta && (
+                          <p className="text-[11px] text-[#1a5c35] font-semibold mt-0.5">{item.cta}</p>
+                        )}
+                      </div>
                       <div className="flex items-center gap-2 shrink-0">
                         <Badge variant="outline" className="font-semibold text-xs px-2">
                           {item.count} {item.unit}
